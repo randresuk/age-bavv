@@ -73,9 +73,226 @@
   position: absolute;
   text-align: center;
 
-  img{
-      width: 200px;
+  img {
+    width: 200px;
   }
+}
+
+//hexagon
+
+/* Outer Hexagon */
+.hexagon-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.hexagon {
+  position: relative;
+  width: 140px;
+  height: 80.83px;
+  background-color: $gold-title;
+  margin: 44px 2px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+  }
+  &:before {
+    bottom: 100%;
+    border-bottom: 40.41px solid $gold-title;
+  }
+  &:after {
+    top: 100%;
+    width: 0;
+    border-top: 40.41px solid $gold-title;
+  }
+}
+
+/* Inner Hexagon */
+.hexagon-inner {
+  position: relative;
+  width: 136px;
+  height: 78.52px;
+  background-color: $gold-letter;
+  margin: 39.26px 0;
+  display: flex;
+  justify-content: center;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 68px solid transparent;
+    border-right: 68px solid transparent;
+    z-index: 1;
+  }
+  &:before {
+    bottom: 100%;
+    border-bottom: 39.26px solid $gold-letter;
+  }
+  &:after {
+    top: 100%;
+    width: 0;
+    border-top: 39.26px solid $gold-letter;
+  }
+}
+
+/* Media queries */
+@media (min-width: 1920px) {
+  .hexagon-grid-container {
+    width: 1600px;
+  }
+  .hexagon:nth-child(21n + 12) {
+    margin-left: 74px;
+  }
+}
+@media (max-width: 1919px) and (min-width: 1280px) {
+  .hexagon-grid-container {
+    width: 1100px;
+  }
+  .hexagon:nth-child(14n + 8) {
+    margin-left: 74px;
+  }
+}
+@media (max-width: 1279px) and (min-width: 1024px) {
+  .hexagon-grid-container {
+    width: 960px;
+  }
+  .hexagon:nth-child(12n + 7) {
+    margin-left: 74px;
+  }
+}
+@media (max-width: 1023px) and (min-width: 781px) {
+  .hexagon-grid-container {
+    width: 780px;
+  }
+  .hexagon:nth-child(9n + 6) {
+    margin-left: 74px;
+  }
+}
+@media (max-width: 780px) and (min-width: 640px) {
+  .hexagon-grid-container {
+    width: 640px;
+  }
+  .hexagon:nth-child(7n + 5) {
+    margin-left: 74px;
+  }
+}
+@media (max-width: 639px) {
+  .hexagon-grid-container {
+    width: 320px;
+  }
+  .hexagon:nth-child(3n + 3) {
+    margin-left: 74px;
+  }
+}
+
+/* Avatar */
+.hexagon-avatar-img {
+  position: absolute;
+  width: 42px;
+  border-radius: 42px;
+  border: 2px solid #fff;
+  top: -24px;
+  z-index: 1;
+}
+
+/* Right / Left Icons */
+.hexagon-icon-left,
+.hexagon-icon-right {
+  position: absolute;
+  z-index: 2;
+  top: 58px;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  border: 1px solid $gold-title;
+  background: lighten($gold-title, 8%);
+  color: $gold-title;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+.hexagon-icon-left {
+  left: 3px;
+}
+.hexagon-icon-right {
+  right: 3px;
+}
+
+/* Hexagon Color Coding */
+.hexagon.hexagon-color {
+  background-color: $blue;
+  &:before {
+    border-bottom: 40.41px solid $blue;
+  }
+  &:after {
+    border-top: 40.41px solid $blue;
+  }
+  .hexagon-inner {
+    background-color: $blue;
+    &:before {
+      border-bottom: 39.26px solid $blue;
+    }
+    &:after {
+      border-top: 39.26px solid $blue;
+    }
+  }
+  .hexagon-featured-score {
+    background: lighten($blue, 5%);
+    border-color: $blue;
+  }
+}
+
+//modal
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 @include mobileMin {
