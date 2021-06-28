@@ -1,26 +1,211 @@
 @font-face {
-    font-family: 'Trajan Pro 3';
-    src: url('./assets/fonts/TrajanPro3-Regular.woff2') format('woff2'),
-        url('./assets/fonts/TrajanPro3-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Trajan Pro 3";
+  src: url("./assets/fonts/TrajanPro3-Regular.woff2") format("woff2"),
+    url("./assets/fonts/TrajanPro3-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Source Sans Pro';
-    src: url('./assets/fonts/SourceSansPro-Regular.woff2') format('woff2'),
-        url('./assets/fonts/SourceSansPro-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Source Sans Pro";
+  src: url("./assets/fonts/SourceSansPro-Regular.woff2") format("woff2"),
+    url("./assets/fonts/SourceSansPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
+// var fonts
+$trajan: "Trajan Pro 3";
+$source: "Source Sans Pro";
+
+//var color
+$gold-letter: rgb(208, 168, 109);
+$gold-title: rgb(205, 163, 81);
+$blue: rgb(34, 44, 62);
+$black: rgb(0, 0, 0);
+$white: rgb(255, 255, 255);
+
+//var font-size
+$f-xl: 3rem;
+$f-l: 1.8rem;
+$f-m: 1.25rem;
+$f-s: 0.8rem;
+
+//coustom styles
+video {
+  width: 100%;
+}
+
+h1 {
+  font-family: $trajan;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  padding: 0;
+  color: $gold-title;
+}
+
+h2 {
+  font-family: $trajan;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  color: $gold-title;
+}
+
+p {
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  color: $gold-letter;
+}
+
+ul {
+  text-decoration: none;
+  list-style: none;
+}
+
+// class coustom
 
 
-.title {
-    // font-family: 'Trajan Pro 3';
-    font-family: 'Source Sans Pro';
-    font-size: 36px;
-    color: red;
+
+//Responsive Media Queries Mobile first
+@mixin mobileMinP {
+  @media only screen and (min-device-width: 320px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin mobileMinL {
+  @media only screen and (min-width: 320px) and (max-height: 415px) {
+    @content;
+  }
+}
+
+@mixin mobileMin {
+  @media screen and (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin mobileMinAndroid {
+  @media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+@mixin mobileAndroidL {
+  @media screen and (min-height: 400px) {
+    @content;
+  }
+}
+
+@mixin mobileAndroid {
+  @media screen and (min-width: 360px) {
+    @content;
+  }
+}
+
+@mixin mobileP {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin mobileL {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (min-width: 375px) {
+    @content;
+  }
+}
+
+@mixin mobilePlusP {
+  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin mobilePlusL {
+  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin mobilePlus {
+  @media screen and (min-width: 414px) {
+    @content;
+  }
+}
+
+@mixin mobileMinL {
+  @media screen and (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin mobileMin {
+  @media screen and (min-width: 733px) {
+    @content;
+  }
+}
+
+@mixin mobileGrand {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 991px) {
+    @content;
+  }
+}
+
+@mixin breakPointMin992 {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin tabletMax {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktopSmall {
+  @media screen and (min-width: 1180px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin desktop_big {
+  @media screen and (min-width: 1366px) {
+    @content;
+  }
+}
+
+@mixin breakPointMin1440 {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin desktopMax {
+  @media screen and (min-width: 1920px) {
+    @content;
+  }
 }
