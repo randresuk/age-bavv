@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Trajan Pro 3';
+    src: url('./assets/fonts/TrajanPro3-Regular.woff2') format('woff2'),
+        url('./assets/fonts/TrajanPro3-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('./assets/fonts/SourceSansPro-Regular.woff2') format('woff2'),
+        url('./assets/fonts/SourceSansPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+.title {
+    // font-family: 'Trajan Pro 3';
+    font-family: 'Source Sans Pro';
+    font-size: 36px;
+    color: red;
+}
